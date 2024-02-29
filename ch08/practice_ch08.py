@@ -3,6 +3,7 @@
 def show_messages(msg):
     for i in msg:
         print(i)
+    print("-----  end show message -----")
 
 # 출력된 메시지를 다른 list변수에 저장하는 메소드
 def send_messages(msg, sent_message):
@@ -10,6 +11,7 @@ def send_messages(msg, sent_message):
         current_msg = msg.pop()
         print(current_msg)
         sent_message.append(current_msg)
+    print("----- end send message -----")
 
 message = ["hello", "world", "Good", "bad"]
 sent_messages = []
