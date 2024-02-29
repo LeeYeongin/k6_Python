@@ -38,3 +38,66 @@ musician = get_formatted_name('jimi', 'hendrix')
 print(musician)
 musician = get_formatted_name('jimi', 'hendrix', 'hooker')
 print(musician)
+print()
+
+while True:
+    print("\n print your name")
+    f_name = input("first name을 입력해주세요: ")
+    if f_name == 'q':
+        break
+    l_name = input("last name을 입력해주세요: ")
+    
+    formatted_name = get_formatted_name(f_name, l_name)
+    print(f"\nhello, {formatted_name}!")
+
+#-------------------------------------------------------------
+# Immutable : 숫자(number), 문자열(string), 튜플(tuple)
+# Mutable : 리스트(list), 딕셔너리(dictionary)
+# 참고: https://ledgku.tistory.com/54
+
+# p.210~211
+def print_models(unprinted_designs, completed_models): # 리스트가 parameter면 변경가능(mutable)
+    """
+    남은게 없을 때까지 디자인을 출력합니다
+    출력이 끝난 디자인은 completed_models 리스트로 이동합니다
+    """
+    while unprinted_designs: # 빈 리스트이면 false
+        current_design = unprinted_designs.pop() # 한개씩 삭제
+        print(f"Printing model: {current_design}")
+        completed_models.append(current_design)
+
+def show_completed_models(completed_modles):
+    """출력된 모델을 모두 표시합니다"""
+    print("\nThe following models have been printed:")
+    for completed_model in completed_modles:
+        print(completed_model)
+
+
+unprinted_designs = ['phone case', 'robot pendant', 'dodecahedron']
+completed_modles = []
+
+print_models(unprinted_designs, completed_modles)
+show_completed_models(completed_modles)
+print()
+
+def modify_string(s): # string은 immutable하므로 변경 불가
+    ### immutable 변수는 튜플, 숫자, 스트링, 불리언이 있음
+    s = s + " world" # 변수 s는 원래 변수가 가리키는 주소와 다름
+    print(s)
+
+st = "hello"
+modify_string(st)
+print(st) # 출력 결과가 hello로 변경되지 않음을 볼 수 있음
+
+# 리스트를 수정하지 못하게 하기
+lst = [1,2,3]
+lst_two = lst[:] # 슬라이싱: 사본을 전달(deep copy?)
+print(lst_two) # [1, 2, 3]
+lst.append(4)
+print(lst) # [1, 2, 3, 4]
+print(lst_two) # [1, 2, 3]
+
+lst2=lst # shallow copy(같은 주소를 가리킴)
+lst2.append(5)
+print(lst2) # [1, 2, 3, 4, 5]
+print(lst) # [1, 2, 3, 4, 5]
