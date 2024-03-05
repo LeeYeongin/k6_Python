@@ -1,8 +1,8 @@
 # 9-1, 9-2
 class Restaurant:
-    def __init__(self, rname, rtype):
-        self.restaurant_name = rname
-        self.cuisine_type = rtype
+    def __init__(self, name, ctype):
+        self.restaurant_name = name
+        self.cuisine_type = ctype
 
     def describe_restaurant(self):
         print(f"restaurant name: {self.restaurant_name}, cuisine type: {self.cuisine_type}")
@@ -19,6 +19,20 @@ restaurant2.describe_restaurant()
 restaurant3.describe_restaurant()
 restaurant.open_restaurant()
 
+# 9-6
+class IceCreamStand(Restaurant):
+    def __init__(self, name, ctype, flavors):
+        super().__init__(name, ctype)
+        self.flavors = flavors
+
+    def show_flavors(self):
+        print("맛이 {}".format(self.flavors))
+        # print(f"맛이 {self.flavors}") # 위와 동일한 방식
+
+ice_cream = IceCreamStand("Italy", "Pizza", "매운맛")
+ice_cream.show_flavors()
+
+
 # 9-3
 class User:
     def __init__(self, first, last):
@@ -34,3 +48,5 @@ class User:
 new_user = User("YeongIn", "Lee")
 new_user.describe_user()
 new_user.greet_user()
+
+
