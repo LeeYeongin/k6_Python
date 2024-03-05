@@ -1,34 +1,36 @@
-class Car:
-    """자동차 클래스"""
-    def __init__(self, make, model, year):
-        """자동차 속성 초기화"""
-        self.make = make
-        self.model = model
-        self.year = year
-        self.odometer_reading = 0
+# class Car:
+#     """자동차 클래스"""
+#     def __init__(self, make, model, year):
+#         """자동차 속성 초기화"""
+#         self.make = make
+#         self.model = model
+#         self.year = year
+#         self.odometer_reading = 0
 
-    def get_descriptive_name(self):
-        """뜻이 분명하고 깔끔한 이름 반환"""
-        long_name = f"{self.year} {self.make} {self.model}"
-        return long_name.title()
+#     def get_descriptive_name(self):
+#         """뜻이 분명하고 깔끔한 이름 반환"""
+#         long_name = f"{self.year} {self.make} {self.model}"
+#         return long_name.title()
     
-    def read_odometer(self):
-        """자동차의 주행거리를 출력합니다"""
-        print(f"이 차의 주행거리는 {self.odometer_reading}마일 입니다.")
+#     def read_odometer(self):
+#         """자동차의 주행거리를 출력합니다"""
+#         print(f"이 차의 주행거리는 {self.odometer_reading}마일 입니다.")
 
-    def update_odometer(self, mileage):
-        """
-        거리계를 주어진 값으로 설정합니다
-        현재 값보다 적은 값을 할당할 수 없습니다.
-        """
-        if mileage >= self.odometer_reading:
-            self.odometer_reading = mileage
-        else:
-            print("You can't roll back an odometer!")
+#     def update_odometer(self, mileage):
+#         """
+#         거리계를 주어진 값으로 설정합니다
+#         현재 값보다 적은 값을 할당할 수 없습니다.
+#         """
+#         if mileage >= self.odometer_reading:
+#             self.odometer_reading = mileage
+#         else:
+#             print("You can't roll back an odometer!")
 
-    def increment_odometer(self, miles):
-        """거리계 값을 주어진 값만큼 늘립니다"""
-        self.odometer_reading += miles
+#     def increment_odometer(self, miles):
+#         """거리계 값을 주어진 값만큼 늘립니다"""
+#         self.odometer_reading += miles
+
+from car import Car # 위 코드 대신 car.py에서 Car를 import해옴
 
 class Battery:
     """배터리"""

@@ -29,15 +29,41 @@ class Car:
     def increment_odometer(self, miles):
         """거리계 값을 주어진 값만큼 늘립니다"""
         self.odometer_reading += miles
-    
-my_new_car = Car('audi', 'a4', 2024)
-print(my_new_car.get_descriptive_name())
-my_new_car.read_odometer()
-# 1. 속성값 직접 수정하기
-my_new_car.odometer_reading = 23 # 속성이 public이다
-my_new_car.read_odometer()
-# 2. 메서드를 통해 속성값 수정하기
-my_new_car.update_odometer(11)
-my_new_car.read_odometer()
-my_new_car.increment_odometer(23_500)
-my_new_car.read_odometer()
+
+class Battery:
+    """배터리"""
+    def __init__(self, battery_size=00): # battery가 0이면 전기차가 아님을 의미
+        """배터리 속성을 초기화합니다"""
+        self.battery_size = battery_size
+
+    def describe_battery(self):
+        """배터리 크기를 설명하는 문장을 출력합니다"""
+        print(f"This car has a {self.battery_size}-kWh battery.")
+
+    def get_range(self):
+        """이 배터리로 주행할 수 있는 거리를 알려줍니다"""
+        if self.battery_size <= 40:
+            range = 150
+        elif self.battery_size >= 65:
+            range = 255
+
+        print(f"This car can go about {range} miles on a full charge")
+
+class ElectricCar(Car):
+    """전기차에만 해당하는 특징을 정의합니다"""
+    def __init__(self, make, model, year, large_battery=Battery()):
+        """
+        부모 클래스의 속성을 초기화합니다
+        그리고 전기차에만 해당하는 속성을 초기화합니다
+        """
+        super().__init__(make, model, year)
+        self.battery = large_battery
+
+    def describe_battery(self):
+        """배터리 크기를 설명하는 문장을 출력합니다"""
+        return f"This car has a {self.battery.battery_size}-kWh battery."
+
+    def get_descriptive_name(self):
+        print(super().get_descriptive_name())
+        # print(f"차량 배터리 크기는 {self.battery.battery_size}")
+        return self.battery.battery_size
