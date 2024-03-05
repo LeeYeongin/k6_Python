@@ -18,6 +18,7 @@ restaurant.describe_restaurant()
 restaurant2.describe_restaurant()
 restaurant3.describe_restaurant()
 restaurant.open_restaurant()
+print()
 
 # 9-6
 class IceCreamStand(Restaurant):
@@ -31,6 +32,7 @@ class IceCreamStand(Restaurant):
 
 ice_cream = IceCreamStand("Italy", "Pizza", "매운맛")
 ice_cream.show_flavors()
+print()
 
 
 # 9-3
@@ -48,5 +50,68 @@ class User:
 new_user = User("YeongIn", "Lee")
 new_user.describe_user()
 new_user.greet_user()
+print()
+
+# 9-8
+class Privileges:
+    def __init__(self, privileges=[]):
+        self.privileges = privileges
+
+    def show_privileges(self):
+        print("사용할 수 있는 권리자 권한은 다음과 같습니다:")
+        for p in self.privileges:
+            print(f"- {p}")
+
+# 9-7
+class Admin(User):
+    def __init__(self, first, last, privileges):
+        super().__init__(first, last)
+        self.privileges = Privileges(privileges)
+
+    # def show_privileges(self):
+    #     print("사용할 수 있는 권리자 권한은 다음과 같습니다:")
+    #     for p in self.privileges:
+    #         print(f"- {p}")
+    
+    
+
+new_manager = Admin("GilDong","Hong",['can delete post', 'can add post'])
+new_manager.greet_user()
+# new_manager.show_privileges() -> 9-7 문제
+new_manager.privileges.show_privileges() # 9-8 문제
+
+# 9-9는 electric_car.py에 구현
+print()
+
+# 9-13
+from random import randint
+
+class Die:
+    def __init__(self, sides=6):
+        self.sides = sides
+
+    def roll_die(self):
+        num = randint(1,self.sides)
+        print(f"주사위의 숫자는 {num}입니다.")
+
+print("[6면체 주사위]")
+six_dice = Die()
+for i in range(10):
+    print(i+1, end=": ")
+    six_dice.roll_die()
+print()
+
+print("[10면체 주사위]")
+ten_dice = Die(10)
+for i in range(10):
+    print(i+1, end=": ")
+    ten_dice.roll_die()
+print()
+
+twenty_dice = Die(20)
+print("[20면체 주사위]")
+for i in range(10):
+    print(i+1, end=": ")
+    twenty_dice.roll_die()
 
 

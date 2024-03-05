@@ -51,6 +51,10 @@ class Battery:
 
         print(f"This car can go about {range} miles on a full charge")
 
+    def upgrade_battery(self):
+        if self.battery_size < 65:
+            self.battery_size = 65
+
 class ElectricCar(Car):
     """전기차에만 해당하는 특징을 정의합니다"""
     def __init__(self, make, model, year, large_battery=Battery()):
@@ -75,7 +79,7 @@ print(my_leaf.describe_battery())
 my_leaf.battery.describe_battery() # 하위 구성 객체 사용
 print()
 
-my_car = Car('Bentz', 'E200', 20223)
+my_car = Car('Bentz', 'E200', 2023)
 print(f"차 제원은 {my_car.get_descriptive_name()}") # Car객체이므로 Car의 get_descriptive_name()메소드 호출
 print()
 
@@ -85,3 +89,11 @@ large_battery_car = ElectricCar('nissan', 'leaf', 2024, large_battery)
 large_battery_car.get_descriptive_name()
 large_battery_car.battery.describe_battery() # 하위 구성 객체 사용
 large_battery_car.battery.get_range()
+print()
+
+# 연습문제 9-9
+new_battery = Battery(40)
+new_car = ElectricCar('Bentz','E200', 2023, new_battery)
+new_car.battery.get_range()
+new_car.battery.upgrade_battery()
+new_car.battery.get_range()
