@@ -115,7 +115,7 @@ for i in range(10):
     twenty_dice.roll_die()
 print()
 
-# 9-14
+# 9-14, 9-15
 from random import choice
 
 def get_Number(lotto):
@@ -127,5 +127,25 @@ def get_Number(lotto):
 lotto = [1,2,3,4,5,6,7,8,9,10,'a','b','c','d']
 win_lotto = get_Number(lotto)
 print(f"다음 번호와 일치하면 상금지급: {win_lotto}")
+my_ticket = get_Number(lotto)
+
+same = 0
+cnt = 0
+while same != 4:
+    for i in my_ticket:
+        if i in win_lotto:
+            same += 1
+    
+    if same != 4:
+        same = 0
+        my_ticket = get_Number(lotto)
+
+    cnt += 1
+
+print(f"당첨자 티켓: {my_ticket}")
+print(cnt)
+
+
+
 
 
