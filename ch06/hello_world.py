@@ -1,146 +1,182 @@
-# 출력
-print("Hello World!")
+# # 출력
+# print("Hello World!")
 
-# 입력
+# # 입력
+# # a, b = input().split()
+# # a, b= int(a), int(b)
+# # print(a + b, a - b, a * b, int(a / b), a % b, sep='\n')
+# # print('----------- 입력')
+
+# # 문자열 길이
+# # a = input()
+# # print(len(a))
+# # print('----------- 문자열')
+
+# # list
+# a = list()
+# b = []
+# # print(type(a))
+# # print(type(b))
+# a.append(1)
+# a.append(2)
+# a.append(3)
+# a.append(4)
+# a.append(5)
+
+# print(a)
+# print(a[::-1])
+# print(a[-1])
+# print(a[0:3], a[3:])
+
+# # list
+# for i in [1, 2, 3, 4, 5]:
+#     print(i)
+# print('----------- list')
+
+# # str
+# for s in 'abcdef':
+#     print(s)
+# print('----------- str')
+
+# # tuple
+# for i in (1,2,3,4,5):
+#     print(i)
+# print('----------- tuple')
+
+# for i in range(5):
+#     print(i)
+# print('----------- range')
+
+# for i in range(1,6):
+#     print(i)
+# print('----------- range')
+
+# # dict
+# d = {1: 'a',
+#      2: 'b',
+#      3: 'c',
+#      4: 'd',
+#      5: 'e'}
+# for i in d:
+#     print(i) # key값만 출력
+# print('----------- dict')
+
+# # 조건문
+# for i in range(1,6):
+#     if i % 2 == 0: # and, or로 여러가지 조건 사용 가능 Ex) i%2==0 and i%3==0
+#         print(i, 'even')
+#     elif i % 3 == 0:
+#         print(i, '3')
+#     else: # 예외되는 case가 없도록 else로 처리 
+#         print(i, 'odd')
+# print('----------- if,elif, else문')
+# # F8번: 오류발생 지점으로 바로 이동
+
+# # 백준 1330번
 # a, b = input().split()
-# a, b= int(a), int(b)
-# print(a + b, a - b, a * b, int(a / b), a % b, sep='\n')
-# print('----------- 입력')
+# a, b = int(a), int(b)
 
-# 문자열 길이
+# if a > b:
+#     print('>')
+# elif a < b:
+#     print('<')
+# else:
+#     print('==')
+
+# # 백준 9498번
 # a = input()
-# print(len(a))
-# print('----------- 문자열')
+# a = int(a)
 
-# list
-a = list()
-b = []
-# print(type(a))
-# print(type(b))
-a.append(1)
-a.append(2)
-a.append(3)
-a.append(4)
-a.append(5)
+# if a >= 90:
+#     print('A')
+# elif 80 <= a:
+#     print('B')
+# elif 70 <= a:
+#     print('C')
+# elif 60 <= a:
+#     print('D')
+# else:
+#     print('F')
 
-print(a)
-print(a[::-1])
-print(a[-1])
-print(a[0:3], a[3:])
+# # 백준 2739번
+# N = input()
+# N = int(N)
 
-# list
-for i in [1, 2, 3, 4, 5]:
-    print(i)
-print('----------- list')
+# for i in range(1,10):
+#     print(f"{N} * {i} = {i*N}")
 
-# str
-for s in 'abcdef':
-    print(s)
-print('----------- str')
+# # 백준 8393번
+# N = input()
+# N = int(N)
+# sum = 0
 
-# tuple
-for i in (1,2,3,4,5):
-    print(i)
-print('----------- tuple')
+# for i in range(1,N+1):
+#     sum += i
+# print(sum)
 
-for i in range(5):
-    print(i)
-print('----------- range')
+# # 백준 25314번
+# N = input()
+# N = int(N)
+# rpt = int(N/4)
 
-for i in range(1,6):
-    print(i)
-print('----------- range')
+# for i in range(rpt):
+#     print('long', end=' ')
+# print('int')
 
-# dict
-d = {1: 'a',
-     2: 'b',
-     3: 'c',
-     4: 'd',
-     5: 'e'}
-for i in d:
-    print(i) # key값만 출력
-print('----------- dict')
+# # 백준 10871번
+# N, X = input().split()
+# N, X = int(N), int(X)
+# value = input().split()
 
-# 조건문
-for i in range(1,6):
-    if i % 2 == 0: # and, or로 여러가지 조건 사용 가능 Ex) i%2==0 and i%3==0
-        print(i, 'even')
-    elif i % 3 == 0:
-        print(i, '3')
-    else: # 예외되는 case가 없도록 else로 처리 
-        print(i, 'odd')
-print('----------- if,elif, else문')
-# F8번: 오류발생 지점으로 바로 이동
+# for i in value:
+#     if int(i) < X:
+#         print(i, end=" ")
 
-# 백준 1330번
-a, b = input().split()
-a, b = int(a), int(b)
+# # 백준 1152번
+# s = input()
+# result = s.split()
+# print(len(result))
 
-if a > b:
-    print('>')
-elif a < b:
-    print('<')
-else:
-    print('==')
+# # 백준 10818번
+# N = input().split()
+# lst = list(map(int, input().split()))
+# print(min(lst), max(lst))
+# print()
 
-# 백준 9498번
-a = input()
-a = int(a)
+# 백준 10807번
+# N = int(input())
+# lst = list(map(int, input().split()))
+# v = int(input())
+# print(lst.count(v))
 
-if a >= 90:
-    print('A')
-elif 80 <= a:
-    print('B')
-elif 70 <= a:
-    print('C')
-elif 60 <= a:
-    print('D')
-else:
-    print('F')
+# 백준 10871
+# N, X = input().split()
+# N, X = int(N), int(X)
+# lst = list(map(int, input().split()))
 
-# 백준 2739번
-N = input()
-N = int(N)
+# for i in lst:
+#     if X > i:
+#         print(i, end=" ")
 
-for i in range(1,10):
-    print(f"{N} * {i} = {i*N}")
+# 백준 27866
+# s = input()
+# i = int(input())
+# print(s[i-1])
 
-# 백준 8393번
-N = input()
-N = int(N)
-sum = 0
+# 백준 10815
+# N = int(input())
+# own_card = list(map(int, input().split()))
+# M = int(input())
+# tmp = list(map(int, input().split()))
 
-for i in range(1,N+1):
-    sum += i
-print(sum)
+# card = dict()
+# for i in tmp:
+#     card[i] = 0
 
-# 백준 25314번
-N = input()
-N = int(N)
-rpt = int(N/4)
+# for i in own_card:
+#     if i in card:
+#         card[i] = 1
 
-for i in range(rpt):
-    print('long', end=' ')
-print('int')
-
-# 백준 10871번
-N, X = input().split()
-N, X = int(N), int(X)
-value = input().split()
-
-for i in value:
-    if int(i) < X:
-        print(i, end=" ")
-
-# 백준 1152번
-s = input()
-result = s.split()
-print(len(result))
-
-# 백준 10818번
-N = input().split()
-lst = list(map(int, input().split()))
-print(min(lst), max(lst))
-
-
+# for i in card.values():
+#     print(i, end=" ")
 
