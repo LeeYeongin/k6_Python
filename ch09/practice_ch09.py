@@ -113,5 +113,19 @@ print("[20면체 주사위]")
 for i in range(10):
     print(i+1, end=": ")
     twenty_dice.roll_die()
+print()
+
+# 9-14
+from random import choice
+
+def get_Number(lotto):
+    winNumber = []
+    for i in range(4):
+        winNumber.append(choice(lotto))
+    return winNumber
+
+lotto = [1,2,3,4,5,6,7,8,9,10,'a','b','c','d']
+win_lotto = get_Number(lotto)
+print(f"다음 번호와 일치하면 상금지급: {win_lotto}")
 
 
