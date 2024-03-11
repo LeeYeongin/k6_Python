@@ -241,3 +241,37 @@
 #     if st in S:
 #         cnt += 1
 # print(cnt)
+
+# --------------------------------------
+# 백준 2750 - 수 정렬하기
+### 교수님 코드
+# import sys
+
+# N = int(input())
+# # data = sys.stdin.readlines() #EOF - Ctrl + z
+# data = [int(d.rstrip()) for d in sys.stdin.readlines()]
+# print('\n'.join(str(s) for s in sorted(data)))
+
+### 내 코드
+# N = input()
+# N = int(N)
+# lst = [int(input()) for _ in range(N)]
+# lst.sort() # sorted는 return이 있고, list는 변화X(원본 유지). sort는 return X, list자체가 변화(원본 유지 X)
+# for n in lst:
+#     print(n)
+
+# --------------------------------------
+# 백준 2587 - 대표값2
+# lst = [int(input()) for _ in range(5)]
+# print(int(sum(lst)/5))
+# lst.sort()
+# print(lst[2])
+
+# --------------------------------------
+# 백준 25305 - 커트라인
+# N,k = input().split()
+# N,k = int(N), int(k)
+# lst = list(map(int, input().split()))
+# lst.sort(reverse=True)
+# print(lst[k-1])
+
