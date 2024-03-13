@@ -275,3 +275,44 @@
 # lst.sort(reverse=True)
 # print(lst[k-1])
 
+# --------------------------------------
+# 백준 7785 - 회사에 있는 사람
+# import sys
+# N = int(input())
+# lst = [int(d.rstrip()) for d in sys.stdin.readlines()]
+# print('\n'.join(str(s) for s in sorted(lst)))
+
+# --------------------------------------
+# 백준 7785 - 회사에 있는 사람 (dict)
+# N = int(input())
+# log_lst = dict()
+# for i in range(N):
+#     name, log = input().split()
+#     log_lst[name] = log
+
+# in_company = [k for k, v in log_lst.items() if v == 'enter']
+# print('\n'.join(person for person in in_company))
+
+
+# 10988 팰린드롬
+# word = input()
+# print("1" if word == word[::-1] else "0") # 단어 뒤집어서 일치하는지 확인하기
+
+# 1157 단어공부
+# from collections import Counter
+# most_common: n번째 까지 가장 많이 나온 요소를 출력(몇개인지 개수도 count)
+# print(Counter('hello world').most_common(1)[0][0])
+
+# import string
+# print(string.digits)
+# print(string.ascii_lowercase)
+
+# s = 'hello world'.lower()
+# C = {l:s.count(l) for l in string.digits + string.ascii_lowercase}
+# print(C)
+# print(sorted(C.items(), key = lambda x: x[1], reverse=True)[0][0])
+
+# 1316 그룹단어 체커
+# 2738 행렬 덧셈
+# 2566 최댓값
+# 10798 세로읽기
