@@ -30,12 +30,12 @@ def handle_key_event(ship_rect, bullets, event):
         ship_rect.left -= SHIP_SPEED
     elif event.key == pygame.K_RIGHT:
         ship_rect.right += SHIP_SPEED 
-            # elif event.key == pygame.K_UP:
-            #     ship_rect.top -= SHIP_SPEED
-            # elif event.key == pygame.K_DOWN:
-            #     # if ship_rect.bottom <= screen_rect.bottom:
-            #     if (ship_rect.top + ship_rect.height) <= screen_rect.height: 
-            #         ship_rect.bottom += SHIP_SPEED
+    # elif event.key == pygame.K_UP:
+    #     ship_rect.top -= SHIP_SPEED
+    # elif event.key == pygame.K_DOWN:
+    #     # if ship_rect.bottom <= screen_rect.bottom:
+    #     if (ship_rect.top + ship_rect.height) <= screen_rect.height: 
+    #         ship_rect.bottom += SHIP_SPEED
     elif event.key == pygame.K_SPACE:
         bullets.append(create_bullet(ship_rect)) # 총알 생성 후 list에 추가
 
@@ -43,7 +43,7 @@ def update_bullet(screen_rect, bullets):
     new_bullets = []
     for bullet in bullets:
         if screen_rect.top < bullet.top: # 총알이 화면 안에 있을 경우만 -1, 아니면 사라짐
-            bullet.top -= 1 # 총알이 앞으로 발사되도록
+            bullet.top -= 10 # 총알이 앞으로 발사되도록
             new_bullets.append(bullet)
     return new_bullets
 
