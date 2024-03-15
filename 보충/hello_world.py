@@ -293,12 +293,13 @@
 # in_company = [k for k, v in log_lst.items() if v == 'enter']
 # print('\n'.join(person for person in in_company))
 
-
-# 10988 팰린드롬
+# --------------------------------------
+# 백준 10988 - 팰린드롬
 # word = input()
 # print("1" if word == word[::-1] else "0") # 단어 뒤집어서 일치하는지 확인하기
 
-# 1157 단어공부
+# --------------------------------------
+# 백준 1157 - 단어공부
 # from collections import Counter
 # most_common: n번째 까지 가장 많이 나온 요소를 출력(몇개인지 개수도 count)
 # print(Counter('hello world').most_common(1)[0][0])
@@ -312,7 +313,37 @@
 # print(C)
 # print(sorted(C.items(), key = lambda x: x[1], reverse=True)[0][0])
 
-# 1316 그룹단어 체커
-# 2738 행렬 덧셈
-# 2566 최댓값
+# --------------------------------------
+# 백준 1316 - 그룹단어 체커
+N = int(input())
+lst = [input() for i in range(N)]
+cnt = 0
+for st in lst:
+    checked = {}
+    for i in range(len(st)):
+        if st[i] in checked: # 문자가 이전에 나온 문자라면
+            if checked[st[i]] == i-1: # 이전 문자와 연속해서 나오는지 확인
+                checked[st[i]] = i
+            else:
+                cnt += 1 # 그룹단어가 아닌 개수 세기
+                break 
+        else: # 처음 나오는 문자라면 추가 {문자 : 문자 인덱스}
+            checked[st[i]] = i
+
+print(N - cnt)
+
+
+# 2738 행렬 덧셈 (수정필요)
+# A = list(map(int,input().split())for _ in range(N))
+# B = list(map(int,input().split())for _ in range(M))
+# for a, b in zip(A, B):
+#     print(' '.join([str(a[i]+b[i]) for i in range(M)]))
+
+
+# 2566 최댓값 (수정필요)
+# max_val = 0
+# max_pos = (0,0)
+# for i, rows in enumerate(data, start=1):
+#     for j, row in enumerate(rows, start=1):
+#         if 
 # 10798 세로읽기
