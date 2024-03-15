@@ -299,6 +299,14 @@
 # print("1" if word == word[::-1] else "0") # 단어 뒤집어서 일치하는지 확인하기
 
 # --------------------------------------
+# 백준 1259 - 팰린드롬수
+while True:
+    num = input()
+    if num == '0':
+        break
+    print("yes" if num == num[::-1] else "no")
+
+# --------------------------------------
 # 백준 1157 - 단어공부
 # from collections import Counter
 # most_common: n번째 까지 가장 많이 나온 요소를 출력(몇개인지 개수도 count)
