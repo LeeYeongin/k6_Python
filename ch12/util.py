@@ -1,4 +1,4 @@
-from setting import HEIGHT, SHIP_IMAGE_PATH, WIDTH, SHIP_SPEED, BULLET_COLOR
+from setting import HEIGHT, SHIP_IMAGE_PATH, WIDTH, SHIP_SPEED, BULLET_COLOR,ALIEN_IMAGE_PATH
 import pygame
 
 
@@ -8,17 +8,19 @@ def init():
     clock = pygame.time.Clock()
     image = pygame.image.load(SHIP_IMAGE_PATH) # 이미지 로드
     bullets = [] # 총알 수가 많으므로 list 사용
+    alien_img = pygame.image.load(ALIEN_IMAGE_PATH)
 
     # 직사각형 각도 좌표를 저장하는 파이게임 객체
     # rect = pygame.Rect((1280/2, 720/2), (200, 200)) # Rect((left, top), (width, height))
     screen_rect = screen.get_rect()
     ship_rect = image.get_rect()
+    alien_rect = alien_img.get_rect()
     # 직접 따로 지정도 가능
     # ship_rect.left = 1280/2 
     # ship_rect.top = 600
     
     ship_rect.midbottom = screen.get_rect().midbottom
-    return screen,clock,image,screen_rect,ship_rect, bullets
+    return screen,clock,image,screen_rect,ship_rect, bullets, alien_img, alien_rect
 
 def create_bullet(ship_rect): # 총알 생성 함수
     bullet = pygame.Rect((0,0),(5,20)) # 총알을 직사각형을 그려 사용
@@ -47,7 +49,8 @@ def update_bullet(screen_rect, bullets):
             new_bullets.append(bullet)
     return new_bullets
 
-def render(screen, image, ship_rect, new_bullets):
+def render(screen, image, ship_rect, new_bullets, alien_img, alien_rect):
     screen.blit(image, ship_rect)
+    screen.blit(alien_img, alien_rect)
     for bullet in new_bullets:
         pygame.draw.rect(screen, BULLET_COLOR, bullet)

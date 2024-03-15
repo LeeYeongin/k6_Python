@@ -5,7 +5,7 @@ from setting import *
 
 pygame.init()
 
-screen, clock, image, screen_rect, ship_rect, bullets = init() # 우주선 위치 지정
+screen, clock, image, screen_rect, ship_rect, bullets, alien_img, alien_rect = init() # 우주선 위치 지정
 
 while True:
     # Process player inputs.
@@ -24,7 +24,7 @@ while True:
     screen.fill("purple")  # Fill the display with a solid color
 
     # Render the graphics here.
-    render(screen, image, ship_rect, new_bullets)
+    render(screen, image, ship_rect, new_bullets, alien_img, alien_rect)
 
     pygame.display.flip()  # Refresh on-screen display
     clock.tick(FRAME_PER_SECOND)         # wait until next frame (at 60 FPS)
