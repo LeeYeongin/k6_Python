@@ -369,19 +369,19 @@
 
 # --------------------------------------
 # 2566 최댓값 (수정필요)
-max_val = 0
-max_pos = (0,0)
-data = [list(map(int, input().split())) for _ in range(9)]
+# max_val = 0
+# max_pos = (0,0)
+# data = [list(map(int, input().split())) for _ in range(9)]
 
-for i, rows in enumerate(data, start=1): # index번호 사용을 0이 아닌 1부터 시작
-    for j, row in enumerate(rows, start=1):
-        if row > max_val:
-            max_val = row
-            max_pos = (i,j) 
+# for i, rows in enumerate(data, start=1): # index번호 사용을 0이 아닌 1부터 시작
+#     for j, row in enumerate(rows, start=1):
+#         if row >= max_val:
+#             max_val = row
+#             max_pos = (i,j) 
 
-print(max_val)
-for p in max_pos:
-    print(p, end=" ")
+# print(max_val)
+# for p in max_pos:
+#     print(p, end=" ")
 
 # 10798 세로읽기
 
