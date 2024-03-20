@@ -16,7 +16,7 @@ COL_TMIN = 5 # full: 8?
 x1, y1 = [], []
 x2, y2 = [], []
 
-with open(Path('ch16/weather_data/', 'a.csv')) as f:
+with open(Path('data/weather_data/', 'a.csv')) as f:
     reader = csv.reader(f)
     header = next(reader)
     for line in reader:
