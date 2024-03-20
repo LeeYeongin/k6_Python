@@ -300,11 +300,11 @@
 
 # --------------------------------------
 # 백준 1259 - 팰린드롬수
-while True:
-    num = input()
-    if num == '0':
-        break
-    print("yes" if num == num[::-1] else "no")
+# while True:
+#     num = input()
+#     if num == '0':
+#         break
+#     print("yes" if num == num[::-1] else "no")
 
 # --------------------------------------
 # 백준 1157 - 단어공부
@@ -323,35 +323,65 @@ while True:
 
 # --------------------------------------
 # 백준 1316 - 그룹단어 체커
-N = int(input())
-lst = [input() for i in range(N)]
-cnt = 0
-for st in lst:
-    checked = {}
-    for i in range(len(st)):
-        if st[i] in checked: # 문자가 이전에 나온 문자라면
-            if checked[st[i]] == i-1: # 이전 문자와 연속해서 나오는지 확인
-                checked[st[i]] = i
-            else:
-                cnt += 1 # 그룹단어가 아닌 개수 세기
-                break 
-        else: # 처음 나오는 문자라면 추가 {문자 : 문자 인덱스}
-            checked[st[i]] = i
+# N = int(input())
+# lst = [input() for i in range(N)]
+# cnt = 0
+# for st in lst:
+#     checked = {}
+#     for i in range(len(st)):
+#         if st[i] in checked: # 문자가 이전에 나온 문자라면
+#             if checked[st[i]] == i-1: # 이전 문자와 연속해서 나오는지 확인
+#                 checked[st[i]] = i
+#             else:
+#                 cnt += 1 # 그룹단어가 아닌 개수 세기
+#                 break 
+#         else: # 처음 나오는 문자라면 추가 {문자 : 문자 인덱스}
+#             checked[st[i]] = i
 
-print(N - cnt)
+# print(N - cnt)
 
+# --------------------------------------
+# 2738 행렬 덧셈
+# N, M = input().split()
+# N, M = int(N), int(M)
+# A = [list(map(int, input().split()))for _ in range(N)]
+# B = [list(map(int,input().split()))for _ in range(N)]
 
-# 2738 행렬 덧셈 (수정필요)
-# A = list(map(int,input().split())for _ in range(N))
-# B = list(map(int,input().split())for _ in range(M))
+# ### 공부가 더 필요함
+# # 교수님 코드 참고
 # for a, b in zip(A, B):
 #     print(' '.join([str(a[i]+b[i]) for i in range(M)]))
 
+# 내가 작성한 코드
+# C = list()
+# for i in range(N):
+#     tmp = []
+#     for a,b in zip(A[i],B[i]):
+#         tmp.append(a+b)
+#     C.append(tmp)
 
+# for c1 in C:
+#     for c2 in c1:
+#         print(c2, end=" ")
+#     print()
+
+
+
+# --------------------------------------
 # 2566 최댓값 (수정필요)
-# max_val = 0
-# max_pos = (0,0)
-# for i, rows in enumerate(data, start=1):
-#     for j, row in enumerate(rows, start=1):
-#         if 
+max_val = 0
+max_pos = (0,0)
+data = [list(map(int, input().split())) for _ in range(9)]
+
+for i, rows in enumerate(data, start=1): # index번호 사용을 0이 아닌 1부터 시작
+    for j, row in enumerate(rows, start=1):
+        if row > max_val:
+            max_val = row
+            max_pos = (i,j) 
+
+print(max_val)
+for p in max_pos:
+    print(p, end=" ")
+
 # 10798 세로읽기
+
