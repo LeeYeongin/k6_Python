@@ -279,7 +279,8 @@
 # 백준 7785 - 회사에 있는 사람
 # import sys
 # N = int(input())
-# lst = [int(d.rstrip()) for d in sys.stdin.readlines()]
+# lst = [d.rstrip() for d in sys.stdin.readlines()]
+# print(lst)
 # print('\n'.join(str(s) for s in sorted(lst)))
 
 # --------------------------------------
@@ -290,8 +291,10 @@
 #     name, log = input().split()
 #     log_lst[name] = log
 
+# # print(log_lst)
 # in_company = [k for k, v in log_lst.items() if v == 'enter']
-# print('\n'.join(person for person in in_company))
+# sin_company = sorted(in_company, reverse=True)
+# print('\n'.join(person for person in sin_company))
 
 # --------------------------------------
 # 백준 10988 - 팰린드롬
@@ -368,7 +371,7 @@
 
 
 # --------------------------------------
-# 2566 최댓값 (수정필요)
+# 2566 최댓값
 # max_val = 0
 # max_pos = (0,0)
 # data = [list(map(int, input().split())) for _ in range(9)]
@@ -383,5 +386,28 @@
 # for p in max_pos:
 #     print(p, end=" ")
 
+# --------------------------------------
 # 10798 세로읽기
+# word = [input() for _ in range(5)]
+# print(word)
 
+# max_len = len(max(word, key=len))
+# for i in range(max_len):
+#     for j in range(5):
+#         if i >= len(word[j]):
+#             pass
+#         else:
+#             print(word[j][i], end='')
+
+# --------------------------------------
+# # 1271 엄청난 부자2
+# n, m = input().split()
+# n, m = int(n), int(m)
+
+# # / -> 실수값 return, // -> 정수형 몫 return
+# a, b = divmod(n,m) # # 몫과 나머지 return
+# print(a) 
+# print(b)
+
+
+# 2745, 5086, 1978, 1934, 2869, 24264, 2798, 1018
