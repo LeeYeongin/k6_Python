@@ -16,8 +16,8 @@ with open('./data/b.geojson', 'r', encoding='UTF8') as f:
         mag.append(feature['properties']['mag'])
         lon.append(feature['geometry']['coordinates'][0])
         lat.append(feature['geometry']['coordinates'][1])
-
-fig = px.scatter_geo(lat=lat, lon=lon, size=mag)
+title = 'Global Earthquakes'
+fig = px.scatter_geo(lat=lat, lon=lon, size=mag, title=title)
 fig.show()    
     
     # 데이터 형식을 확인하기 위한 출력 ↓
